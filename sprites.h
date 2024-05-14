@@ -247,7 +247,7 @@ const uint8_t IMAGE_DATA_CACTUS_SM[] = {
 
 // SPRITES UI
 
-const uint8_t IMAGE_DATA[] = {
+const uint8_t IMAGE_DATA_HEART[] = {
 
     // metadata
 

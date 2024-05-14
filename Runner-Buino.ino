@@ -11,7 +11,7 @@ Image _spriteCactusSmall(IMAGE_DATA_CACTUS_SM);
 Image _spriteForeground(IMAGE_DATA_FOREGROUND);
 Image _spriteHeart(IMAGE_DATA_HEART);
 Image _spriteHole(IMAGE_DATA_HOLE);
-Image _spriteSky(IMAGE_DATA_CACTUS_SKY);
+Image _spriteSky(IMAGE_DATA_SKY);
 
 
 // Valeur max de l'écran 80x64
@@ -28,6 +28,8 @@ struct Player {
   bool isDoubleJumping;
   bool isCooldown;
 };
+
+Player player;
 
 
 void setup() {
