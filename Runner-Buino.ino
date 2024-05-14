@@ -34,11 +34,15 @@ void loop() {
       // Code du jeu
       break;
     
-    case 3: //--- PENDANT DES DEGATS
+    case 3: //--- LA PAUSE
+      // pause
+      break;
+
+    case 4: //--- PENDANT DES DEGATS
       // Code qui fait mal
       break;
 
-    case 4: //--- FIN DE PARTIE
+    case 5: //--- FIN DE PARTIE
       // Code de fin de partie
       break;
   }
