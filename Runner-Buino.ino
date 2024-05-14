@@ -1,9 +1,45 @@
-void setup() {
-  // put your setup code here, to run once:
+#include <Gamebuino-Meta.h>   
 
+int _state = 1; // TODO: le repasser à 0
+
+// Valeur max de l'écran 80x64
+const int X_SCREEN_MAX = 78;
+const int Y_SCREEN_MAX = 62;
+
+
+void setup() {
+  gb.begin();
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
 
+  while(!gb.update());
+  gb.display.clear();
+  
+  // --------------------------------------------
+  // Switch en fonction de l'écran _state actuel
+  // --------------------------------------------
+
+  switch (_state) {
+    
+    case 0: //--- ECRAN D'ACCEUIL
+      // Code écrand'acceuil
+      break;
+
+    case 1: //--- BEFORE THE GAME
+      // Code du before
+      break;
+    
+    case 2: //--- LE JEU
+      // Code du jeu
+      break;
+    
+    case 3: //--- PENDANT DES DEGATS
+      // Code qui fait mal
+      break;
+
+    case 4: //--- FIN DE PARTIE
+      // Code de fin de partie
+      break;
+  }
 }
