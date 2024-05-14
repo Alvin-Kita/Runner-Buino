@@ -271,3 +271,15 @@ const uint8_t IMAGE_DATA_HEART[] = {
     0x00, 0x00, 0x00, 0x00
 
 };
+
+// -------------------------
+// Déclaration des sprites
+// ------------------------- 
+Image _spriteHero1(IMAGE_DATA_HERO1);
+Image _spriteHero2(IMAGE_DATA_HERO2);
+Image _spriteCactusLarge(IMAGE_DATA_CACTUS_LG);
+Image _spriteCactusSmall(IMAGE_DATA_CACTUS_SM);
+Image _spriteForeground(IMAGE_DATA_FOREGROUND);
+Image _spriteHeart(IMAGE_DATA_HEART);
+Image _spriteHole(IMAGE_DATA_HOLE);
+Image _spriteSky(IMAGE_DATA_SKY);
