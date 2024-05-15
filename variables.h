@@ -22,6 +22,16 @@ struct Player {
 
 Player _player;
 
+
+void _playerTimerUpdate() {
+  _player.timer++;
+	if (_player.timer == 8) {
+		_player.timer = 0;
+	}
+}
+
+
+
 // Constantes
 // ----------
 const Image BACKGROUNDS[] = {

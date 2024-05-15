@@ -5,10 +5,7 @@ void introInit() {
 
 void introUpdate() {
 	
-	_player.timer++;
-	if (_player.timer == 8) {
-		_player.timer = 0;
-	}
+	_playerTimerUpdate();
 	
 	gb.display.print("Level ");
 	gb.display.print(_currentLevel +1);
