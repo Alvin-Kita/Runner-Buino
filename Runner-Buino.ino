@@ -1,16 +1,15 @@
 #include <Gamebuino-Meta.h>   
 #include "sprites.h"
-#include "playerFunctions.h"
+#include "variables.h"
+#include "intro.h"
+#include "game.h"
 
-int _state = 1; // TODO: le repasser à 0
-
-
-// Valeur max de l'écran 80x64
-const int X_SCREEN_MAX = 78;
-const int Y_SCREEN_MAX = 62;
 
 void setup() {
   gb.begin();
+	gb.display.setPalette(PALETTE);
+	// initialisation
+	introInit();
 }
 
 void loop() {
@@ -28,13 +27,14 @@ void loop() {
       // Code écrand'acceuil
       break;
 
-    case 1: //--- BEFORE THE GAME
-      // Code du before
-      break;
+    case 1: //--- INTRO
+      // Code de l'intro
+      introUpdate();
+			break;
     
     case 2: //--- LE JEU
       // Code du jeu
-      
+      gameUpdate();
       break;
     
     case 3: //--- LA PAUSE

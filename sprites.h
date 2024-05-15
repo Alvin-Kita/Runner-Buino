@@ -366,3 +366,4 @@ Image _spriteHeart(IMAGE_DATA_HEART);
 Image _spriteHole(IMAGE_DATA_HOLE);
 Image _spriteBackground1(IMAGE_DATA_BACKGROUND1);
 Image _spriteBackground2(IMAGE_DATA_BACKGROUND2);
+Image _spriteBackground3(IMAGE_DATA_BACKGROUND3);
