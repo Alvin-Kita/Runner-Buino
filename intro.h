@@ -12,8 +12,10 @@ void introUpdate() {
 	
 	_player.x++;
 	
+  // Passage à la phase de jeu
 	if (_player.x >= 80) {
 		_state = 2;
+    introInit();
 	}
 	
 }
