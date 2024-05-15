@@ -1,13 +1,13 @@
 const int X_POSITION_PLAYER = 6;
 const int Y_FLOOR_PLAYER = 38;
-const int Y_MAX_PLAYER = 10;
-const float JUMP_SPEED_UP = 1.5;
-const float JUMP_SPEED_BOTTOM = 1.5;
+const int Y_MAX_PLAYER = 14;
+const float JUMP_SPEED_UP = 2;
+const float JUMP_SPEED_BOTTOM = 3;
 
 int jumpState = 0; // 0 => au sol; 1 => montée; 2 => Ymax; 3 => descente 
 
 //Varible de jumpState2 immobile en l'air
-const int FRAME_JUMPSTATE_2 = 3;
+const int FRAME_JUMPSTATE_2 = 8;
 int cptCase2 = 0; // compteur des frame d'immobilitée en l'air
 
 // TODO: inertie 

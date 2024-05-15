@@ -14,6 +14,7 @@ void introUpdate() {
 	
   // Passage à la phase de jeu
 	if (_player.x >= 80) {
+		obstaclesInit();
 		_state = 2;
     introInit();
 	}

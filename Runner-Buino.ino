@@ -1,8 +1,8 @@
 #include <Gamebuino-Meta.h>   
 #include "sprites.h"
 #include "variables.h"
-#include "intro.h"
 #include "background.h"
+#include "intro.h"
 #include "player.h"
 
 
@@ -11,6 +11,7 @@ void setup() {
 	gb.display.setPalette(PALETTE);
 	// initialisation
 	introInit();
+	//obstaclesInit(); // si début à state 2
 }
 
 void loop() {
