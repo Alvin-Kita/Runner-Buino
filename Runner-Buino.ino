@@ -2,7 +2,8 @@
 #include "sprites.h"
 #include "variables.h"
 #include "intro.h"
-#include "game.h"
+#include "background.h"
+#include "player.h"
 
 
 void setup() {
@@ -34,7 +35,8 @@ void loop() {
     
     case 2: //--- LE JEU
       // Code du jeu
-      gameUpdate();
+      backgroundUpdate();
+			playerUpdate();
       break;
     
     case 3: //--- LA PAUSE

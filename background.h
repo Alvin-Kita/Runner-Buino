@@ -19,7 +19,7 @@ void drawBg() {
   }
 }
 
-void gameUpdate() {
+void backgroundUpdate() {
 	
 	// Timer pour l'animation du background
 	_scrollingTimer++;
