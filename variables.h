@@ -4,6 +4,7 @@
 
 int _state = 1; // TODO: le repasser à 0
 int _currentLevel = 0;
+int _scrollingTimer = 0;
 
 // Function du joueur
 // ------------------- 
