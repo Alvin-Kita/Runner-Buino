@@ -41,7 +41,7 @@ struct Player {
   int life;
   int timer;
   bool isJumping;
-  bool isDoubleJumping;
+  bool isBugged;
   bool isCooldown;
 };
 
