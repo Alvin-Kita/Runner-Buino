@@ -6,6 +6,8 @@ int _state = 1; // TODO: le repasser à 0
 int _currentLevel = 0;
 int _scrollingTimer = 0;
 
+int _debug = 42;
+
 // Obstacles
 const int NB_OBSTACLES = 5;
 
@@ -14,9 +16,10 @@ struct Obstacle {
 	int type; // 0: hole, 1: cactus large, 2: cactus small
 };
 
-Obstacle _obstacles[NB_OBSTACLES -1];
+Obstacle _obstacles[NB_OBSTACLES];
 
-const int OBSTACLES_DISTANCE_MIN = 16;
+
+const int OBSTACLES_DISTANCE_MIN = 24;
 const int OBSTACLES_DISTANCE_ADD_RANDOM = 24;
 
 

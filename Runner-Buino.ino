@@ -13,8 +13,9 @@ void setup() {
   gb.begin();
 	gb.display.setPalette(PALETTE);
 	// initialisation
+  obstaclesInit();
 	introInit();
-	gameInit(); // si début à state 2
+	// gameInit(); // si début à state 2
 }
 
 void loop() {

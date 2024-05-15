@@ -5,7 +5,11 @@
 void gameInit() {
 	_player.life = 3;
 	_player.score = 0;
+  _player.x = -8;
+	_player.y = 38;
 	obstaclesInit();
+  _currentLevel = random(0,3);
+  _state = 2;
 }
 
 void gameCheckCollision() {

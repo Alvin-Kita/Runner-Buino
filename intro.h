@@ -15,8 +15,6 @@ void introUpdate() {
   // Passage à la phase de jeu
 	if (_player.x >= 80) {
 		gameInit();
-		_state = 2;
-    introInit(); // remet player à gauche hors écran
 	}
 	
 }
