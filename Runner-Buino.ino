@@ -1,6 +1,8 @@
 #include <Gamebuino-Meta.h>   
+
 #include "sprites.h"
 #include "variables.h"
+#include "acceuil.h"
 #include "background.h"
 #include "game.h"
 #include "intro.h"
@@ -31,6 +33,7 @@ void loop() {
     
     case 0: //--- ECRAN D'ACCEUIL
       // Code écrand'acceuil
+      acceuilUpdate();
       break;
 
     case 1: //--- INTRO
