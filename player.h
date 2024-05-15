@@ -10,6 +10,11 @@ int jumpState = 0; // 0 => au sol; 1 => montée; 2 => Ymax; 3 => descente
 const int FRAME_JUMPSTATE_2 = 3;
 int cptCase2 = 0; // compteur des frame d'immobilitée en l'air
 
+// Variable de bugged
+// bugged = retour instantanné au sol et cooldown pour le réutiliser
+const int BUGGED_NB_FRAME = 50; // Nombre de frame où le bbug est inutilisable
+int buggedCount = 0;
+
 // TODO: inertie 
 void playerJump() {
     switch (jumpState) {
@@ -70,5 +75,23 @@ void playerUpdate() {
   // Déclanchement
   if ( ((gb.buttons.repeat(BUTTON_UP, 0) || gb.buttons.repeat(BUTTON_A, 0)) && !_player.isJumping) || _player.isJumping) {
     playerJump();
+  }
+
+  // Retour instantané
+  if (_player.isJumping && gb.buttons.repeat(BUTTON_DOWN, 0) && !_player.isBugged) {
+    _player.isBugged = true;
+    _player.y = Y_FLOOR_PLAYER;
+    jumpState = 0;
+    _player.isJumping = false;
+  }
+
+  // timer du retour instantanné
+  if (_player.isBugged) {
+    if (buggedCount >= BUGGED_NB_FRAME) {
+      _player.isBugged = false;
+      buggedCount = 0;
+    } else {
+      buggedCount++;
+    }
   }
 }
