@@ -57,8 +57,11 @@ void playerUpdate() {
   }
   
   // Gestion des sprites
-  _playerSpriteUpdate();
-
+  if (!_player.isJumping) {
+    _playerSpriteUpdate();
+  } else {
+    gb.display.drawImage(_player.x, _player.y, _spriteHero2);
+  }
 
   // -------------------------
   // Saut
