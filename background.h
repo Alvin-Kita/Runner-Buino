@@ -1,6 +1,6 @@
-// ------------------------------------
-// Méthodes du BACKGROUND (GAME state)
-// ------------------------------------
+// ----------------------------------
+// Méthodes du BACKGROUND (_state 2)
+// ----------------------------------
 
 void drawSprite(int x, int y, Image sprite) {
   if ((x<80) && (y<64)) {
@@ -22,7 +22,7 @@ void obstaclesInit() {
 void respawnObstacle(int val) {
 	int max_x = _obstacles[0].x;
 	int max_obstacle_index = 0;
-	for (int i=1; i<5; i++) {
+	for (int i=1; i<NB_OBSTACLES; i++) {
 		if (_obstacles[i].x > max_x) {
 			max_x = _obstacles[i].x;
 			max_obstacle_index = i;

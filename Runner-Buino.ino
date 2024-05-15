@@ -17,7 +17,6 @@ void setup() {
 	// initialisation
   obstaclesInit();
 	introInit();
-	// gameInit(); // si début à state 2
 }
 
 void loop() {
@@ -48,17 +47,10 @@ void loop() {
 			gameCheckCollision();
 			uiGameUpdate();
       break;
-    
-    case 3: //--- LA PAUSE
-      // pause
-      break;
 
-    case 4: //--- PENDANT DES DEGATS
-      // Code qui fait mal
-      break;
-
-    case 5: //--- FIN DE PARTIE
+    case 3: //--- FIN DE PARTIE
       // Code de fin de partie
+      gameOverUpdate();
       break;
   }
 }

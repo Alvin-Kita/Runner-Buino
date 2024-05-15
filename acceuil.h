@@ -2,7 +2,7 @@ bool startGame;
 
 // Temps de stance avant l'écran suivant
 int cptStart;
-const int START_NB_FRAME = 50; // nombre de frame après avoir appuyer sur le bouton, avant de passer à l'intro
+const int START_NB_FRAME = 0; // nombre de frame après avoir appuyer sur le bouton, avant de passer à l'intro
 
 //clignotement du bouton text de start
 int cptBlink = 0;
@@ -44,7 +44,7 @@ void acceuilUpdate() {
   // -------------------------
   // Crédits
   // ------------------------- 
-  gb.display.setCursor(0, 57);
+  gb.display.setCursor(4, 57);
   gb.display.println("Game by : AK & JCK");
 
   if ( (gb.buttons.repeat(BUTTON_A, 0) || (gb.buttons.repeat(BUTTON_B, 0))) && !startGame ) {

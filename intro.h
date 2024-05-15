@@ -7,8 +7,8 @@ void introUpdate() {
 	
 	_playerSpriteUpdate();
 	
-	gb.display.print("Level ");
-	gb.display.print(_currentLevel +1);
+  gb.display.setCursor(24,16);
+	gb.display.print("Get ready");
 	
 	_player.x++;
 	

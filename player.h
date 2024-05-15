@@ -61,18 +61,26 @@ void playerUpdate() {
     _player.x++;
   }
   
+  if (_loseTimer > 0) {
+    _loseTimer--;
+  }
+
   // Gestion des sprites
   if (!_player.isJumping) {
     _playerSpriteUpdate();
   } else {
-    gb.display.drawImage(_player.x, _player.y, _spriteHero2);
+    // Permet le clignottement du sprite le temps de LoseTimer :
+    if ((_loseTimer == 0) || (_loseTimer % 4 < 2)) {
+      gb.display.drawImage(_player.x, _player.y, _spriteHero2);
+    }
+    
   }
 
   // -------------------------
   // Saut
   // -------------------------   
 
-  // Déclanchement
+  // Déclenchement
   if ( ((gb.buttons.repeat(BUTTON_UP, 0) || gb.buttons.repeat(BUTTON_A, 0)) && !_player.isJumping) || _player.isJumping) {
     playerJump();
   }
@@ -85,7 +93,7 @@ void playerUpdate() {
     _player.isJumping = false;
   }
 
-  // timer du retour instantanné
+  // timer du retour instantané
   if (_player.isBugged) {
     if (buggedCount >= BUGGED_NB_FRAME) {
       _player.isBugged = false;

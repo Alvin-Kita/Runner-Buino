@@ -22,6 +22,7 @@ Obstacle _obstacles[NB_OBSTACLES];
 const int OBSTACLES_DISTANCE_MIN = 24;
 const int OBSTACLES_DISTANCE_ADD_RANDOM = 24;
 
+int _loseTimer = 0;
 
 const Image BACKGROUNDS[] = {
 	_spriteBackground1,
@@ -32,7 +33,6 @@ const Image BACKGROUNDS[] = {
 // Valeur max de l'écran 80x64
 const int X_SCREEN_MAX = 78;
 const int Y_SCREEN_MAX = 62;
-
 
 // Function du joueur
 // ------------------- 
@@ -57,9 +57,11 @@ void _playerSpriteUpdate() {
 		_player.timer = 0;
 	}
 
-  if (_player.timer < 4) {
-		gb.display.drawImage(_player.x, _player.y, _spriteHero1);
-	} else {
-		gb.display.drawImage(_player.x, _player.y, _spriteHero2);
-	}
+  if ((_loseTimer == 0) || (_loseTimer % 4 < 2)) {
+    if (_player.timer < 4) {
+      gb.display.drawImage(_player.x, _player.y, _spriteHero1);
+    } else {
+      gb.display.drawImage(_player.x, _player.y, _spriteHero2);
+    }
+  }
 }
