@@ -1,38 +1,11 @@
-
-// Obstacles
-const int NB_OBSTACLES = 5;
-
-struct Obstacle {
-	int x;
-	int type; // 0: hole, 1: cactus large, 2: cactus small
-};
-
-Obstacle _obstacles[NB_OBSTACLES -1];
-
-const int OBSTACLES_DISTANCE_MIN = 24;
-const int OBSTACLES_DISTANCE_ADD_RANDOM = 32;
+// ------------------------------------
+// Méthodes du BACKGROUND (GAME state)
+// ------------------------------------
 
 
-// ---------------------
-// Initialise obstacles
-// ---------------------
-
-void addObstacle(int val) {
-	int max_x = 30;
-	int max_obstacle_index;
-	for (int i=0; i<NB_OBSTACLES; i++) {
-		if (_obstacles[i].x > max_x) {
-			max_x = _obstacles[i].x;
-			max_obstacle_index = i;
-		}
-	}
-	int distance_min = OBSTACLES_DISTANCE_MIN;
-	if (_obstacles[max_obstacle_index].type == 0) {
-		distance_min = OBSTACLES_DISTANCE_MIN +8;
-	}
-	_obstacles[val].x = (int)(max_x + distance_min + OBSTACLES_DISTANCE_ADD_RANDOM);
-	_obstacles[val].type = (int)(rand()%3);
-}
+// -------------------
+// Méthodes obstacles
+// -------------------
 
 void obstaclesInit() {
 	_obstacles[0].x = 50;
@@ -49,6 +22,23 @@ void obstaclesInit() {
 	
 	_obstacles[4].x = 250;
 	_obstacles[4].type = (int)(rand()%3);
+}
+
+void respawnObstacle(int val) {
+	int max_x = 30;
+	int max_obstacle_index;
+	for (int i=0; i<NB_OBSTACLES; i++) {
+		if (_obstacles[i].x > max_x) {
+			max_x = _obstacles[i].x;
+			max_obstacle_index = i;
+		}
+	}
+	int distance_min = OBSTACLES_DISTANCE_MIN;
+	if (_obstacles[max_obstacle_index].type == 0) {
+		distance_min = OBSTACLES_DISTANCE_MIN +8;
+	}
+	_obstacles[val].x = (int)(max_x + distance_min + OBSTACLES_DISTANCE_ADD_RANDOM);
+	_obstacles[val].type = (int)(rand()%3);
 }
 
 // ------------------------
@@ -108,7 +98,7 @@ void backgroundUpdate() {
 	for (int i=0; i<NB_OBSTACLES; i++){
 		_obstacles[i].x--;
 		if (_obstacles[i].x < -16) {
-			addObstacle(i);
+			respawnObstacle(i);
 		}
 	}
 	

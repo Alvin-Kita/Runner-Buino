@@ -2,8 +2,11 @@
 #include "sprites.h"
 #include "variables.h"
 #include "background.h"
+#include "game.h"
 #include "intro.h"
 #include "player.h"
+#include "ui.h"
+
 
 
 void setup() {
@@ -11,7 +14,7 @@ void setup() {
 	gb.display.setPalette(PALETTE);
 	// initialisation
 	introInit();
-	//obstaclesInit(); // si début à state 2
+	gameInit(); // si début à state 2
 }
 
 void loop() {
@@ -38,6 +41,8 @@ void loop() {
       // Code du jeu
       backgroundUpdate();
 			playerUpdate();
+			gameCheckCollision();
+			uiGameUpdate();
       break;
     
     case 3: //--- LA PAUSE
