@@ -1,6 +1,8 @@
 #include <Gamebuino-Meta.h>   
+
 #include "sprites.h"
 #include "variables.h"
+#include "acceuil.h"
 #include "intro.h"
 #include "background.h"
 #include "player.h"
@@ -11,6 +13,7 @@ void setup() {
 	gb.display.setPalette(PALETTE);
 	// initialisation
 	introInit();
+  
 }
 
 void loop() {
@@ -26,6 +29,7 @@ void loop() {
     
     case 0: //--- ECRAN D'ACCEUIL
       // Code écrand'acceuil
+      acceuilUpdate();
       break;
 
     case 1: //--- INTRO

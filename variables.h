@@ -2,7 +2,7 @@
 // Variables globales
 // -------------------
 
-int _state = 1; // TODO: le repasser à 0
+int _state = 0; // TODO: le repasser à 0
 int _currentLevel = 0;
 int _scrollingTimer = 0;
 
